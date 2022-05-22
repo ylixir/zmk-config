@@ -10,7 +10,7 @@
 
 #define default_layer 0
 #define navigation_layer 1
-#define bluetooth_layer 1
+#define bluetooth_layer 2
 
 / {
   combos {
