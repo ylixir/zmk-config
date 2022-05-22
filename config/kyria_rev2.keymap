@@ -6,25 +6,119 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define default_layer 0
+#define navigation_layer 1
+#define bluetooth_layer 1
 
 / {
-	keymap {
-		compatible = "zmk,keymap";
+  keymap {
+    compatible = "zmk,keymap";
+    combos {
+      compatible = "zmk,combos";
+      combo_tilde { timeout-ms = <50>; key-positions = <0 1>; bindings = <&kp TILDE>; };
+      combo_lt { timeout-ms = <50>; key-positions = <4 5>; bindings = <&kp LT>; };
+      combo_lt { timeout-ms = <50>; key-positions = <6 7>; bindings = <&kp GT>; };
+      combo_grave { timeout-ms = <50>; key-positions = <10 12>; bindings = <&kp GRAVE>; };
+      combo_minus { timeout-ms = <50>; key-positions = <17 18>; bindings = <&kp MINUS>; };
+      combo_plus { timeout-ms = <50>; key-positions = <19 20>; bindings = <&kp MINUS>; };
+      combo_excl { timeout-ms = <50>; key-positions = <14 26>; bindings = <&kp EXCL>; };
+      combo_at { timeout-ms = <50>; key-positions = <15 27>; bindings = <&kp AT>; };
+      combo_pound { timeout-ms = <50>; key-positions = <16 28>; bindings = <&kp POUND>; };
+      combo_dllr { timeout-ms = <50>; key-positions = <17 29>; bindings = <&kp DLLR>; };
+      combo_prcnt { timeout-ms = <50>; key-positions = <18 30>; bindings = <&kp PRCNT>; };
+      combo_caret { timeout-ms = <50>; key-positions = <19 35>; bindings = <&kp CARET>; };
+      combo_amps { timeout-ms = <50>; key-positions = <20 36>; bindings = <&kp AMPS>; };
+      combo_star { timeout-ms = <50>; key-positions = <21 37>; bindings = <&kp START>; };
+      combo_semi { timeout-ms = <50>; key-positions = <22 38>; bindings = <&kp SEMI>; };
+      combo_colon { timeout-ms = <50>; key-positions = <23 39>; bindings = <&kp COLON>; };
+      combo_bluetooth { timeout-ms = <50>; key-positions = <42 49>; bindings = <&mo bluetooth_layer>; };
+    };
 
-		default_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
-			bindings = <
-	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
-	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
-			>;
+// key numbers
+// ,-------------------------------------------.                              ,-------------------------------------------.
+// |   0   (~) 1   |  2   |  3   |  4  (<) 5   |                              |  6  (>) 7   |  8   |  9   |  10 (`)  12   |
+// |--------+---1--+---2--+---3--+---4--+---5--|                              |---6--+---7--+---8--+---9--+---0--+--------|
+// |   13   |  14  |  15  |  16  |  17 (-) 18  |                              |  19 (+) 20  |  21  |  22  |  23  |   24   |
+// |--------+---!--+---@--+---#--+---$--+---%--+-------------.  ,-------------+---^--+---&--+---*--+---;--+---:--+--------|
+// |   25   |  26  |  27  |  28  |  29 (=) 30  |  31  |  32  |  |  33  |  34  |  35 (_) 36  |  37  |  38  |  39  |   40   |
+// `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+//                        |  41  |  42  |  43  |  44  |  45  |  |  46  |  47  |  48  |  49  |  50  |
+//                        `----------|-----------------------'  `-----------------------|----------'
+//                                   +----------------- bluetooth layer ----------------+
+// base
+// ,-------------------------------------------.                              ,-------------------------------------------.
+// |  tab  (~)  Q  |   W  |   F  |   P (<)  B  |                              |   J (>)  L  |   U  |   Y  |   ' (`)  "    |
+// |--------+---1--+---2--+---3--+---4--+---5--|                              |---6--+---7--+---8--+---9--+---0--+--------|
+// | Ctrl ( |   A  |   R  |   S  |   T (=)  G  |                              |   M (_)  N  |   E  |   I  |   O  | Ctrl ) |
+// |--------+---!--+---@--+---#--+---$--+---%--+-------------.  ,-------------+---^--+---&--+---*--+---;--+---:--+--------|
+// | Shft [ |   Z  |   X  |   C  |   D (-)  V  |   {  | Del  |  |   \  |  }   |   K (+)  H  |   ,  |   .  |   /  | Shft ] |
+// `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+//                        | ESC  |      | Alt  |Space |  Gui |  | Gui  | Bspc | Alt  |      |  Ent |
+//                        |      |   ^  |      |      |      |  |      |  Nav |      |  ^   |      |
+//                        `----------|-----------------------'  `-----------------------|----------'
+//                        - vol +    +----------------- bluetooth layer ----------------+   <-alt->
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-		};
-	};
+// navigation
+// ,-------------------------------------------.                              ,-------------------------------------------.
+// |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+// |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+// |        |      |      |      |      |      |                              | Left | Down | Up   | Right|      |        |
+// |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+// |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+// `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+//                        |      |      |      |      |      |  |      |      |      |      |      |
+//                        |      |      |      |      |      |  |      |      |      |      |      |
+//                        `----------------------------------'  `----------------------------------'
+//
+// bluetooth
+// ,-------------------------------------------.                              ,-------------------------------------------.
+// |        |  1   |  2   |  3   |  4   |  5   |                              |      |      |      |      |      |        |
+// |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+// |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+// |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+// |        |      |      |      |      |      |      | Clr  |  |      |      |      |      |      |      |      |        |
+// `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+//                        |      |      |      |      |      |  |      |      |      |      |      |
+//                        |      |      |      |      |      |  |      |      |      |      |      |
+//                        `----------------------------------'  `----------------------------------'
+
+    default_layer {
+      bindings = <
+  &kp TAB   &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U     &kp Y   &kp SQT  &kp DQT
+  &kp LCTRL &kp A &kp R &kp S &kp T &kp G                                                &kp M &kp N  &kp E     &kp I   &kp O    &kp RCTRL
+  &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp LBRC  &kp DEL        &kp BSLH &kp RBRC   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                   &kp ESC  &none  &kp LALT &kp SPACE &kp LGUI       &kp RGUI &lt navigation_layer BSPC   &kp RALT &none &kp RET
+
+      >;
+
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LA(LEFT) LA(RIGHT)>;
+    };
+    navigation_layer {
+      bindings = <
+  &trans   &trans &trans &trans &trans &trans                                            &trans   &trans   &trans &trans    &trans  &trans
+  &trans   &trans &trans &trans &trans &trans                                            &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans  &trans
+  &trans   &trans &trans &trans &trans &trans   &trans  &trans       &trans   &trans     &trans   &trans   &trans &trans    &trans  &trans
+                          &trans  &trans  &trans &trans &trans       &trans   &trans     &trans &trans &trans
+
+      >;
+    };
+    bluetooth_layer {
+      bindings = <
+  &none   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                            &none   &none   &none &none    &none  &none
+  &none   &none &none &none &none &none                                            &none &none &none &none &none  &none
+  &none   &none &none &none &none &none   &none  &bt BT_CLR       &none   &none     &none   &none   &none &none    &none  &none
+                          &none  &trans  &none &none &none       &none   &none     &none &trans &none
+
+      >;
+    };
+  };
 };
+
+// original keymap (for reference)
+//  &kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
+//  &kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+//  &kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+//                  &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
+
