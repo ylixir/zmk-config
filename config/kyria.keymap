@@ -19,8 +19,10 @@
   combos {
     compatible = "zmk,combos";
     combo_tilde { timeout-ms = <50>; key-positions = <0 1>; bindings = <&kp TILDE>; };
+    combo_grave { timeout-ms = <50>; key-positions = <10 11>; bindings = <&kp GRAVE>; };
+
     combo_lt { timeout-ms = <50>; key-positions = <4 5>; bindings = <&kp LT>; };
-    combo_lt { timeout-ms = <50>; key-positions = <6 7>; bindings = <&kp GT>; };
+    combo_gt { timeout-ms = <50>; key-positions = <6 7>; bindings = <&kp GT>; };
 
     combo_n1 { timeout-ms = <50>; key-positions = <1 13>; bindings = <&kp N1>; };
     combo_n2 { timeout-ms = <50>; key-positions = <2 14>; bindings = <&kp N2>; };
@@ -33,9 +35,9 @@
     combo_n9 { timeout-ms = <50>; key-positions = <9 21>; bindings = <&kp N9>; };
     combo_n0 { timeout-ms = <50>; key-positions = <10 22>; bindings = <&kp N0>; };
 
-    combo_grave { timeout-ms = <50>; key-positions = <10 11>; bindings = <&kp GRAVE>; };
     combo_minus { timeout-ms = <50>; key-positions = <16 17>; bindings = <&kp MINUS>; };
     combo_plus { timeout-ms = <50>; key-positions = <18 19>; bindings = <&kp MINUS>; };
+    
     combo_excl { timeout-ms = <50>; key-positions = <13 25>; bindings = <&kp EXCL>; };
     combo_at { timeout-ms = <50>; key-positions = <14 26>; bindings = <&kp AT>; };
     combo_pound { timeout-ms = <50>; key-positions = <15 27>; bindings = <&kp POUND>; };
@@ -46,8 +48,10 @@
     combo_star { timeout-ms = <50>; key-positions = <20 36>; bindings = <&kp STAR>; };
     combo_semi { timeout-ms = <50>; key-positions = <21 37>; bindings = <&kp SEMI>; };
     combo_colon { timeout-ms = <50>; key-positions = <22 38>; bindings = <&kp COLON>; };
+    
     combo_equal { timeout-ms = <50>; key-positions = <28 29>; bindings = <&kp EQUAL>; };
     combo_under { timeout-ms = <50>; key-positions = <34 35>; bindings = <&kp UNDER>; };
+    
     combo_bluetooth { timeout-ms = <50>; key-positions = <41 48>; bindings = <&mo bluetooth_layer>; };
   };
   keymap {
@@ -105,7 +109,7 @@
       bindings = <
   &kp TAB   &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U     &kp Y   &kp SQT  &kp DQT
   &mt LCTRL LPAR &kp A &kp R &kp S &kp T &kp G                                                &kp M &kp N  &kp E     &kp I   &kp O    &mt RCTRL RPAR
-  &mt LSHFT RBKT &kp Z &kp X &kp C &kp D &kp V   &kp LBRC  &kp DEL        &kp BSLH &kp RBRC   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &mt RSHFT RBKT
+  &mt LSHFT LBKT &kp Z &kp X &kp C &kp D &kp V   &kp LBRC  &kp DEL        &kp BSLH &kp RBRC   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &mt RSHFT RBKT
                    &kp ESC  &none  &kp LALT &kp SPACE &kp LGUI       &kp RGUI &lt navigation_layer BSPC   &kp RALT &none &kp RET
 
       >;
