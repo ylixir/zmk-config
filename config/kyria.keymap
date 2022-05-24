@@ -12,11 +12,12 @@
 #define navigation_layer 1
 #define bluetooth_layer 2
 
-&left_encoder { resolution = <1>; };
-&right_encoder { resolution = <1>; };
+&left_encoder { resolution = <2>; };
+&right_encoder { resolution = <2>; };
 
 / {
   behaviors {
+    // mainly to allow key repeat with backspace
     rlt: behavior_repeating_layer_tap {
       compatible = "zmk,behavior-hold-tap";
       label = "REPEATING_LAYER_TAP";
