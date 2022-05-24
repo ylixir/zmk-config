@@ -22,7 +22,7 @@
       label = "REPEATING_LAYER_TAP";
       #binding-cells = <2>;
       flavor = "tap-unless-interrupted";
-      tapping-term-ms = <200>;
+      tapping-term-ms = <500>;
       bindings = <&mo>, <&kp>;
     };
   };
