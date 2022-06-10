@@ -121,8 +121,8 @@
     combo_artsey_right_dot   { timeout-ms = <50>; key-positions = <7 20>;        layers = <artsey_layer>; bindings = <&kp DOT>; };
     combo_artsey_left_comma  { timeout-ms = <50>; key-positions = <4 14>;        layers = <artsey_layer>; bindings = <&kp COMMA>; };
     combo_artsey_right_comma { timeout-ms = <50>; key-positions = <7 21>;        layers = <artsey_layer>; bindings = <&kp COMMA>; };
-    combo_artsey_left_slash  { timeout-ms = <50>; key-positions = <4 13>;        layers = <artsey_layer>; bindings = <&kp FSLSH>; };
-    combo_artsey_right_slash { timeout-ms = <50>; key-positions = <7 22>;        layers = <artsey_layer>; bindings = <&kp FSLSH>; };
+    combo_artsey_left_slash  { timeout-ms = <50>; key-positions = <4 13>;        layers = <artsey_layer>; bindings = <&kp FSLH>; };
+    combo_artsey_right_slash { timeout-ms = <50>; key-positions = <7 22>;        layers = <artsey_layer>; bindings = <&kp FSLH>; };
     combo_artsey_left_excl   { timeout-ms = <50>; key-positions = <2 14>;        layers = <artsey_layer>; bindings = <&kp EXCL>; };
     combo_artsey_right_excl  { timeout-ms = <50>; key-positions = <9 21>;        layers = <artsey_layer>; bindings = <&kp EXCL>; };
     combo_artsey_left_space  { timeout-ms = <50>; key-positions = <13 14 15 16>; layers = <artsey_layer>; bindings = <&kp SPACE>; };
@@ -202,17 +202,6 @@
 //                        |      |      |      |      |      |  |      |      |      |      |      |
 //                        `----------------------------------'  `----------------------------------'
 //
-// bluetooth
-// ,-------------------------------------------.                              ,-------------------------------------------.
-// |        |  1   |  2   |  3   |  4   |  5   |                              |      |      |      |      |      |        |
-// |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-// |        |      |      |      |      |      |                              |      |      |      |      |      |        |
-// |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-// |        |      |      |      |      |      |      | Clr  |  |      |      |      |      |      |      |      |        |
-// `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-//                        |      |      |      |      |      |  |      |      |      |      |      |
-//                        |      |      |      |      |      |  |      |      |      |      |      |
-//                        `----------------------------------'  `----------------------------------'
     base {
       bindings = <
   &kp TAB   &kp Q &kp W &kp F &kp P &kp B                                                   &kp J &kp L  &kp U     &kp Y   &kp SQT  &kp DQT
@@ -294,12 +283,23 @@
                          &tog artsey_layer &none &none &none &none       &none &none &none &none &tog artsey_layer
       >;
     };
+// bluetooth
+// ,-------------------------------------------.                              ,-------------------------------------------.
+// |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+// |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+// |        |BTprf |  2   |  1   |  0   |      |                              |      |      |      |      |      |        |
+// |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+// |        |USBprf|  5   |  4   |  3   |      |      |      |  |      |      |      |      |      |      |      |        |
+// `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+//                        |      |      |      |      |      |  |      |      |      |      |      |
+//                        |      |      |      |      |      |  |      |      |      |      |      |
+//                        `----------------------------------'  `----------------------------------'
     bluetooth {
       bindings = <
-  &none   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                            &none   &none   &none &none    &none  &none
-  &none   &none &none &none &none &none                                            &none &none &none &none &none  &none
-  &none   &none &none &none &none &none   &none  &bt BT_CLR       &none   &none     &none   &none   &none &none    &none  &none
-                          &none  &trans  &none &none &none       &none   &none     &none &trans &none
+  &none   &none        &none        &none        &none        &none                                    &none &none &none &none &none &none
+  &none   &out OUT_BLE &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &none                                    &none &none &none &none &none &none
+  &none   &out OUT_USB &bt BT_SEL 5 &bt BT_SEL 4 &bt BT_SEL 3 &none   &none  &none       &none   &none &none &none &none &none &none &none
+                                                   &none  &none  &none &none &none       &none   &none &none &none &none
 
       >;
     };
