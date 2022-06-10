@@ -277,8 +277,8 @@
     };
     artsey_o {
       bindings = <
-  &none &none  &kp C_VOL_UP &kp INS   &kp C_MUTE &none                               &none &kp MUTE  &kp INS   &kp C_VOL_UP &none  &none
-  &none &trans &kp C_VOL_DN &kp PSCRN &kp RSHFT  &none                               &none &kp RSHFT &kp PSCRN &kp C_VOL_DN &trans &none
+  &none &none  &kp C_VOL_UP &kp INS   &kp C_MUTE &none                               &none &kp C_MUTE &kp INS   &kp C_VOL_UP &none  &none
+  &none &trans &kp C_VOL_DN &kp PSCRN &kp RSHFT  &none                               &none &kp RSHFT  &kp PSCRN &kp C_VOL_DN &trans &none
   &none &none  &none        &none     &none      &none &none &none       &none &none &none &none &none &none &none &none
                          &tog artsey_layer &none &none &none &none       &none &none &none &none &tog artsey_layer
       >;
