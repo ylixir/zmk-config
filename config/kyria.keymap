@@ -159,7 +159,7 @@
 
     combo_left_bluetooth { timeout-ms = <50>; key-positions = <1 4 13 16>; layers = <base_layer artsey_layer bluetooth_layer>; bindings = <&tog bluetooth_layer>; };
     combo_right_bluetooth { timeout-ms = <50>; key-positions = <7 10 19 22>; layers = <base_layer artsey_layer bluetooth_layer>; bindings = <&tog bluetooth_layer>; };
-    // combo_left_artsey  { timeout-ms = <50>; key-positions = <13 14 15 16>; layers = <base_layer game_layer>; bindings = <&tog artsey_layer>; };
+    combo_left_artsey  { timeout-ms = <50>; key-positions = <13 14 15 16>; layers = <base_layer game_layer>; bindings = <&tog artsey_layer>; };
     combo_right_artsey { timeout-ms = <50>; key-positions = <19 20 21 22>; layers = <base_layer game_layer>; bindings = <&tog artsey_layer>; };
   };
   keymap {
