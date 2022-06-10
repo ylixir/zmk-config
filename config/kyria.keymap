@@ -129,7 +129,7 @@
     combo_artsey_left_space  { timeout-ms = <50>; key-positions = <13 14 15 16>; layers = <artsey_layer>; bindings = <&kp SPACE>; };
     combo_artsey_right_space { timeout-ms = <50>; key-positions = <19 20 21 22>; layers = <artsey_layer>; bindings = <&kp SPACE>; };
     combo_artsey_left_bkspc  { timeout-ms = <50>; key-positions = <3 16>;        layers = <artsey_layer>; bindings = <&kp BSPC>; };
-    combo_artsey_right_bkspc { timeout-ms = <50>; key-positions = <2 19>;        layers = <artsey_layer>; bindings = <&kp BSPC>; };
+    combo_artsey_right_bkspc { timeout-ms = <50>; key-positions = <8 19>;        layers = <artsey_layer>; bindings = <&kp BSPC>; };
     combo_artsey_left_del    { timeout-ms = <50>; key-positions = <3 14>;        layers = <artsey_layer>; bindings = <&kp DEL>; };
     combo_artsey_right_del   { timeout-ms = <50>; key-positions = <8 21>;        layers = <artsey_layer>; bindings = <&kp DEL>; };
 
