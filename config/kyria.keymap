@@ -202,7 +202,8 @@
 //                        |      |      |      |      |      |  |      |      |      |      |      |
 //                        `----------------------------------'  `----------------------------------'
 //
-    base {
+    base_layer {
+      label = "clavier d'ylixir";
       bindings = <
   &kp TAB   &kp Q &kp W &kp F &kp P &kp B                                                   &kp J &kp L  &kp U     &kp Y   &kp SQT  &kp DQT
   &mt LCTRL LPAR &kp A &kp R &kp S &kp T &kp G                                              &kp M &kp N  &kp E     &kp I   &kp O    &mt RCTRL RPAR
@@ -213,7 +214,8 @@
 
       sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LA(LEFT) LA(RIGHT)>;
     };
-    nagigation {
+    nagigation_layer {
+      label = "nav";
       bindings = <
   &trans   &trans &trans &trans &trans &trans                                            &trans   &trans   &trans &trans    &trans  &trans
   &trans   &trans &trans &trans &trans &trans                                            &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans  &trans
@@ -234,7 +236,8 @@
 //                        |      | Base |      |      |      |  |      |      |      | Base |      |
 //                        `----------------------------------'  `----------------------------------'
 //                          Tab                                                               Tab
-    game {
+    game_layer {
+      label = "gamer";
       bindings = <
   &kp TAB   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                   &kp N5 &kp N4 &kp N3 &kp N2 &kp N1 &kp TAB
   &kp LCTRL &kp T  &kp Q  &kp W  &kp E  &kp R                                    &kp R  &kp Q  &kp W  &kp E  &kp T  &kp LCTRL
@@ -243,15 +246,17 @@
       >;
       sensor-bindings = <&inc_dec_kp (LSHFT | TAB) TAB &inc_dec_kp (LSHFT | TAB) TAB>;
     };
-    artsey {
+    artsey_layer {
+      label = "artsey.io"
       bindings = <
-  &none &kp S &kp T &kp R &kp A &none                               &none &kp A &kp R &kp T &kp S &none
-  &none &kp O &kp I &kp Y &kp E &none                               &none &kp E &kp Y &kp I &kp O &none
+  &none &lt artsey_s_layer S &kp T &kp R &lt artsey_a_layer A &none                               &none &lt artsey_a_layer A &kp R &kp T &lt artsey_s_layer S &none
+  &none &lt artsey_o_layer O &kp I &kp Y &lt artsey_e_layer E &none                               &none &lt artsey_e_layer E &kp Y &kp I &lt artsey_o_layer O &none
   &none &none &none &none &none &none &none &none       &none &none &none &none &none &none &none &none
         &tog artsey_layer &none &none &none &none       &none &none &none &none &tog artsey_layer
       >;
     };
-    artsey_a {
+    artsey_a_layer {
+      label = "artsey-a";
       bindings = <
   &none &kp RBRC &kp LPAR &kp RPAR &trans &none             &none &trans &kp LPAR &kp RPAR &kp LBRC &none
   &none &kp LBRC &kp LBKT &kp RBKT &none  &none             &none &none  &kp LBKT &kp RBKT &kp RBRC &none
@@ -259,7 +264,8 @@
                     &none &none &none &none &none       &none &none &none &none &none
       >;
     };
-    artsey_s {
+    artsey_s_layer {
+      label = "artsey-s";
       bindings = <
   &none &trans &kp N3 &kp N2 &kp N1 &none                               &none &kp N1 &kp N2 &kp N3 &trans &none
   &none &none  &kp N6 &kp N5 &kp N4 &none                               &none &kp N4 &kp N5 &kp N6 &none  &none
@@ -267,7 +273,8 @@
         &tog artsey_layer &none &none &none &none       &none &none &none &none &tog artsey_layer
       >;
     };
-    artsey_e {
+    artsey_e_layer {
+      label = "artsey-e";
       bindings = <
   &none &kp GRAVE &kp SEMI &kp BSLH &kp EXCL &none                               &none &kp EXCL &kp BSLH &kp SEMI &kp GRAVE &none
   &none &kp EQUAL &kp MINUS &kp QMARK &trans &none                               &none &trans &kp QMARK &kp MINUS &kp EQUAL &none
@@ -275,7 +282,8 @@
         &tog artsey_layer &none &none &none &none       &none &none &none &none &tog artsey_layer
       >;
     };
-    artsey_o {
+    artsey_o_layer {
+      label = "artsey-o";
       bindings = <
   &none &none  &kp C_VOL_UP &kp INS   &kp C_MUTE &none                               &none &kp C_MUTE &kp INS   &kp C_VOL_UP &none  &none
   &none &trans &kp C_VOL_DN &kp PSCRN &kp RSHFT  &none                               &none &kp RSHFT  &kp PSCRN &kp C_VOL_DN &trans &none
@@ -294,7 +302,8 @@
 //                        |      |      |      |      |      |  |      |      |      |      |      |
 //                        |      |      |      |      |      |  |      |      |      |      |      |
 //                        `----------------------------------'  `----------------------------------'
-    bluetooth {
+    bluetooth_layer {
+      label = "bluetooth";
       bindings = <
   &none   &none        &none        &none        &none        &none                                    &none &none &none &none &none &none
   &none   &out OUT_BLE &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &none                                    &none &none &none &none &none &none
