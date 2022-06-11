@@ -247,7 +247,7 @@
       sensor-bindings = <&inc_dec_kp (LSHFT | TAB) TAB &inc_dec_kp (LSHFT | TAB) TAB>;
     };
     artsey_layer {
-      label = "artsey.io"
+      label = "artsey.io";
       bindings = <
   &none &lt artsey_s_layer S &kp T &kp R &lt artsey_a_layer A &none                               &none &lt artsey_a_layer A &kp R &kp T &lt artsey_s_layer S &none
   &none &lt artsey_o_layer O &kp I &kp Y &lt artsey_e_layer E &none                               &none &lt artsey_e_layer E &kp Y &kp I &lt artsey_o_layer O &none
